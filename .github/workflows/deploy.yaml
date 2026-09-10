@@ -90,8 +90,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
+
+      - name: Install sharp
+        run: npm install --platform=linux --arch=x64 sharp
 
       - name: Build website
         env:
