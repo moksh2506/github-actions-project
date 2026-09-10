@@ -93,7 +93,10 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Install sharp
-        run: npm install --platform=linux --arch=x64 sharp
+        run: npm install --platform=linux --arch=x64 sharp --ignore-scripts
+
+      - name: Install Pagefind
+        run: npm install pagefind@1.5.2
 
       - name: Build website
         env:
