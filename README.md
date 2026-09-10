@@ -1,3 +1,9 @@
+## Project Links
+
+- **GitHub Repository:** https://github.com/moksh2506/github-actions-project
+- **Published Knowledge Base:** https://moksh2506.github.io/github-actions-project/
+
+
 # CorpX Documentation
 
 Welcome to CorpX documentation! Our documentation serves as a vital resource for understanding our products, services, and processes. It ensures clarity, consistency, and accessibility for both internal teams and external users. We value your contributions to keeping our documentation robust and up-to-date.
