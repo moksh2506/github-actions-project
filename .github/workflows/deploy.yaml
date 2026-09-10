@@ -46,7 +46,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -92,8 +92,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
-      - name: Install native dependencies
-        run: npm rebuild
+      - name: Rebuild sharp
+        run: npm rebuild sharp
 
       - name: Install Pagefind
         run: npm install pagefind@1.5.2
@@ -107,7 +107,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
 
   deploy:
     name: Deploy
