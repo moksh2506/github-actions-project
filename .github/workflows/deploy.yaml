@@ -128,6 +128,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -139,6 +142,9 @@ jobs:
         run: |
           DATE=$(date +'%Y-%m-%d')
 
+          gh issue create \
+            --title "$DATE - Deployment: succeeded" \
+            --body "URL: $DEPLOYMENT_URL"
           gh issue create \
             --title "$DATE - Deployment: succeeded" \
             --body "URL: $DEPLOYMENT_URL"
